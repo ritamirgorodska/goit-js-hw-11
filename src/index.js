@@ -62,7 +62,7 @@ function renderGallery(images) {
   if (images.total === 0) {
     onError();
   } else {
-    refs.gallery.insertAdjacentHTML('beforeend', renderMarkUpCard(images));
+    refs.gallery.insertAdjacentHTML('beforeend', renderImageCard(images));
     refs.loadMoreBtn.classList.remove('is-hidden');
   }
 }
@@ -71,12 +71,12 @@ function renderMoreImages(images) {
   if (images.total === 0) {
     onError();
   } else {
-    refs.gallery.insertAdjacentHTML('beforeend', renderMarkUpCard(images));
+    refs.gallery.insertAdjacentHTML('beforeend', renderImageCard(images));
   }
 }
 
-function renderMarkUpCard(images) {
-  const MarkUpCard = images.hits
+function renderImageCard(images) {
+  const ImageCard = images.hits
     .map(item => {
       return `<div class="photo-card">
       <a href="${item.largeImageURL}"><img src="${item.webformatURL}" alt="${item.tags}" loading="lazy" width=320/></a>
@@ -101,7 +101,7 @@ function renderMarkUpCard(images) {
 </div>`;
     })
     .join('');
-  return MarkUpCard;
+  return ImageCard;
 }
 
 function onError() {
