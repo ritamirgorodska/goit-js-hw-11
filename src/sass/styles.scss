@@ -29,9 +29,7 @@
 button {
   cursor: pointer;
 }
-.is-hidden {
-  display: none;
-}
+
 .search-form {
   width: 100%;
   display: flex;
@@ -99,4 +97,7 @@ img {
   align-items: center;
   gap: 5px;
   color: #2f303a;
+}
+.is-hidden {
+  display: none;
 }
